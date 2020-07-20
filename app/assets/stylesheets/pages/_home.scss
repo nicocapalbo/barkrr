@@ -1,1 +1,14 @@
 // Specific CSS for your home-page
+
+.main {
+  display: flex;
+}
+
+.side-bar {
+  border: 1px solid;
+  // flex-grow: 1;
+}
+
+.brkfeed {
+  border: 1px solid;
+}
