@@ -1,0 +1,25 @@
+.tw-inpt {
+  margin: 25px auto;
+  border: 1px solid grey;
+  border-radius: 5px;
+  display: flex;
+}
+
+.tw-inpt-body {
+  width: 100%;
+  margin-right: 20px;
+}
+
+.tw-inpt-body-title {
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.tw-inpt-body-form {
+  margin-bottom: 10px;
+}
+
+.forms-buttons {
+  justify-content: flex-end;
+  margin-top: 10px;
+}
