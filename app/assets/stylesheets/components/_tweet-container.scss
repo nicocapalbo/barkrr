@@ -1,0 +1,41 @@
+.tweets-feed {
+  z-index: 1;
+}
+
+.tweet-container {
+border-top: 1px solid grey;
+border-left: 1px solid grey;
+border-right: 1px solid grey;
+min-height: 107px;
+position: relative;
+}
+
+.tweet-body {
+  display: flex;
+}
+
+.tw-cnt-avatar {
+  width: 46px;
+  text-align: center;
+  margin: 10px;
+}
+
+.fa-user-circle {
+  font-size: 46px;
+}
+
+.tw-cnt-body {
+  margin-top: 10px;
+}
+
+.bottom-toolbar {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+}
+
+.bottom-toolbar-items {
+  display: flex;
+  justify-content: space-around;
+  padding: 0px 20px 0px 20px;
+}

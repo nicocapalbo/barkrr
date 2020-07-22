@@ -1,23 +1,27 @@
 // Specific CSS for your home-page
 
 body {
-  overscroll-behavior: none
+  overscroll-behavior: none;
+  background-color: white;
 }
 
 .main {
   display: flex;
-  margin: 0px 10% 0px 10%;
-  height: calc(100vh - 68px);
-  // overscroll-behavior: none;
+  margin: 0px 8% 0px 8%;
+  // height: calc(100vh - 68px);
 }
 
 .side-bar {
-  border: 1px solid;
+  position: sticky;
+  top: 68px;
+  border: 1px solid grey;
   // flex-grow: 1;
   max-width: 25%;
+  height: calc(100vh - 68px);
 }
 
 .main-center {
-  border: 1px solid;
+  margin: 0px 3% 0px 3%;
+  // border: 1px solid grey;
   flex-grow: 1;
 }
