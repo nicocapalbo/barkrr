@@ -1,0 +1,22 @@
+<div class="pdbody">
+  <div class="usrcvr">
+
+  </div>
+  <div class="usr-avatar">
+        <i class="far fa-user-circle"></i>
+  </div>
+  <div class="usr-follow">
+        <follow class="fllwbtn">Follow</follow>
+  </div>
+  <div class="usrdatabody">
+    <div class="usrdatab">
+      <usrname class="usrname"><%= @user.username %></usrname>
+      <usrhandle class="usrdata">@<%= @user.handle %></usrhandle>
+      <usrhandle class="usrdata mt-2">Joined <%= @user.created_at.strftime('%B %Y') %></usrhandle>
+      <div class="followings">
+        <usrfollowings class="usrdata"><%= @user.followees.count %> Following</usrfollowings>
+        <usrfollowings class="usrdata"><%= @user.followers.count %> Followers</usrfollowings>
+      </div>
+  </div>
+  </div>
+</div>

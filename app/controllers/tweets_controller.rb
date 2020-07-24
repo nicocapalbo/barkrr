@@ -1,5 +1,10 @@
 class TweetsController < ApplicationController
 
+  def index
+    @user = User.find(params[:user_id])
+    @tweets = User.find(params[:user_id]).tweets.order("created_at DESC")
+  end
+
   def create
     if Following.find_by(followed_id: 1, follower_id: 1).nil?
       Following.create(followeed_id: current_user.id, follower_id: current_user.id)

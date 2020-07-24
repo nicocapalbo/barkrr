@@ -1,0 +1,15 @@
+<div class="btfbody">
+  <%= link_to root_path do %>
+    <div class="backbutton">
+      <i class="fas fa-arrow-left"></i>
+    </div>
+  <% end %>
+  <div class="btfusr">
+    <div class="usrname">
+      <%= @user.username %>
+    </div>
+    <div class="tweetscount">
+      <text><%= @user.tweets.count %> Tweets</text>
+    </div>
+  </div>
+</div>
