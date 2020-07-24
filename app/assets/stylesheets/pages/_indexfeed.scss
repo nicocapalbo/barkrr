@@ -1,0 +1,81 @@
+.btfbody {
+  border-right: 1px solid $twt-lgray;
+  border-bottom: 1px solid $twt-lgray;
+  border-left: 1px solid $twt-lgray;
+  display: flex;
+  padding-left: 14px;
+  padding-right: 14px;
+  height: 49px;
+}
+
+.backbutton {
+  margin-top: 6px;
+  margin-right: 15px;
+  padding-right: 25px;
+  width: 35px;
+  height: 35px;
+  position: relative;
+  i {
+    position: absolute;
+    top: 9px;
+    left: 9px;
+   }
+}
+
+.backbutton:hover {
+  background-color: $twt-elgray;
+  border-radius: 50%;
+}
+
+.pdbody {
+  height: 369px;
+  border-right: 1px solid $twt-lgray;
+  border-bottom: 1px solid $twt-lgray;
+  border-left: 1px solid $twt-lgray;
+  position: relative;
+
+  .usrcvr {
+    height: 200px;
+    background-color: $twt-lgray;
+  }
+
+  .usr-avatar {
+    position: absolute;
+    left: 20px;
+    top: 125px;
+
+
+    .far {
+      font-size: 125px;
+      color: $twt-blue;
+    }
+  }
+
+  .fllwbtn {
+    position: absolute;
+    right: 35px;
+    bottom: 110px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: $twt-blue;
+    border-radius: 20px;
+    padding: 8px 20px 8px 20px;
+  }
+}
+
+.usrdatabody {
+  position: relative;
+
+  .usrdatab {
+    position: absolute;
+    top: 55px;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.followings {
+  margin-top: 5px;
+}

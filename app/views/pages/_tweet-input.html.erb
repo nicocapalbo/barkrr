@@ -11,7 +11,7 @@
         <%= simple_form_for [@user, @tweet] do |f| %>
           <%= f.input :text , label: false, placeholder: 'Write your tweet...', as: :text, input_html: {rows: 2}, wrapper: false %>
           <div class="d-flex forms-buttons">
-            <%= f.button :submit, 'Tweet', class: "btn btn-primary" %>
+            <%= f.button :submit, 'Tweet', class: "twtbtn" %>
           </div>
         <% end  %>
       </div>
