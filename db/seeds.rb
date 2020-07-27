@@ -29,8 +29,15 @@ end
 
 p "3. Creating followings..."
 
-300.times do
-  Following.create(followed_id: rand(1..30), follower_id: rand(1..30))
+followed = 1
+30.times do
+  follower = (1..30).to_a.shuffle
+  indexpos = 0
+  rand(5..30).times do
+    Following.create(followed_id: followed, follower_id: follower[indexpos])
+    indexpos += 1
+  end
+  followed += 1
 end
 
 
