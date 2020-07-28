@@ -1,0 +1,13 @@
+<div class="usr-follow-btn" data-controller="followings">
+  <% if current_user.id != @user.id %>
+    <% if !current_user.following?(@user) %>
+      <%= link_to follow_user_path(@user) do %>
+        <follow class="fllwbtn follow">Follow</follow>
+      <% end  %>
+    <% else  %>
+      <%= link_to unfollow_user_path(@user) do %>
+        <follow class="fllwbtn following" data-action="mouseover->followings#over mouseout->followings#out">Following</follow>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>
