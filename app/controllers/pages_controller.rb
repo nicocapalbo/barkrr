@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :home ]
+  skip_before_action :authenticate_user!, only: [:home]
 
   def home
     @tweet = Tweet.new
@@ -16,5 +16,4 @@ class PagesController < ApplicationController
       @tweets = @tweets.sort_by { |tweet| tweet.created_at}.reverse!
     end
   end
-
 end

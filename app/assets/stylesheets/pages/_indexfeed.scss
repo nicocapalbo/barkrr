@@ -51,17 +51,33 @@
     }
   }
 
-  .fllwbtn {
-    position: absolute;
-    right: 35px;
-    bottom: 110px;
-    font-size: 16px;
-    font-weight: bold;
-    color: white;
-    background-color: $twt-blue;
-    border-radius: 20px;
-    padding: 8px 20px 8px 20px;
-  }
+}
+.fllwbtn {
+  position: absolute;
+  right: 35px;
+  bottom: 110px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 20px;
+  padding: 8px 20px 8px 20px;
+}
+
+.follow {
+  color: $twt-blue;
+  border: 1px solid $twt-blue;
+  background-color: white;
+}
+
+.following {
+  color: white;
+  background-color: $twt-blue;
+  border: 1px solid $twt-blue;
+}
+
+.unfollow {
+  color: white;
+  background-color: #D92027;
+  border: 1px solid #D92027;
 }
 
 .usrdatabody {

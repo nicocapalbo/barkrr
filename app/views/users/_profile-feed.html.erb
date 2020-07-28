@@ -1,0 +1,30 @@
+<div class="tweets-feed">
+  <% @tweets.each do |tweet|  %>
+  <div class="tweet-container">
+    <div class="tweet-body">
+      <div class="tw-cnt-avatar">
+        <i class="fas fa-user-circle"></i>
+      </div>
+      <div class="tw-cnt-body">
+        <div class="tw-cnt-body-usr d-flex">
+          <h3 class="mr-2"><%= tweet.user.username %></h3>
+          <h4 class="mr-2">@<%= tweet.user.handle %></h4>
+          <h4 class="mr-2">-</h4>
+          <h4 class="mr-2"><%= time_ago_in_words(tweet.created_at) %></h4>
+        </div>
+        <div class="tw-cnt-body-text">
+          <%= tweet.text %>
+        </div>
+      </div>
+    </div>
+    <div class="bottom-toolbar">
+      <div class="bottom-toolbar-items">
+        <h4><i class="far fa-heart"></i>5</h4>
+        <h4><i class="far fa-heart"></i>5</h4>
+        <h4><i class="far fa-heart"></i>5</h4>
+        <h4><i class="far fa-heart"></i>5</h4>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
