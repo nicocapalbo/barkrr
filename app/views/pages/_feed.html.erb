@@ -7,7 +7,9 @@
       </div>
       <div class="tw-cnt-body">
         <div class="tw-cnt-body-usr d-flex">
-          <h3 class="mr-2"><%= tweet.user.username %></h3>
+          <%= link_to user_path(tweet.user.id) do  %>
+            <h3 class="mr-2"><%= tweet.user.username %></h3>
+          <% end  %>
           <h4 class="mr-2">@<%= tweet.user.handle %></h4>
           <h4 class="mr-2">-</h4>
           <h4 class="mr-2"><%= time_ago_in_words(tweet.created_at) %></h4>
