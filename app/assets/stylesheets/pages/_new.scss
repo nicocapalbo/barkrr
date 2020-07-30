@@ -1,0 +1,160 @@
+.landing {
+  display: flex;
+  height: 100vh;
+}
+
+.wlcm {
+  width: 50%;
+  background-color: $twt-lblue;
+  background-image: url("barkrr-logo-landing");
+  background-repeat: no-repeat;
+  background-size: 1200px 1200px;
+  background-position-x: -180px;
+  background-position-y: -227px;
+  position: relative;
+
+  .textbox {
+    position: absolute;
+    display: flex;
+    height: 220px;
+    top: 270px;
+    left: 220px;
+    flex-direction: column;
+    justify-content: space-around;
+
+    i {
+      color: white;
+      font-size: 20px;
+      padding-right: 10px;
+    }
+
+  }
+
+  .txtmain {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+  }
+}
+
+// ----------------FORM shared----------------
+.login {
+  width: 50%;
+  background-color: $twt-lblack;
+  position: relative;
+
+}
+
+.form {
+  position: absolute;
+  top: 80px;
+  left: 60px;
+  right: 60px;
+}
+
+#new_user {
+  display: flex;
+  justify-content: space-around;
+ }
+
+ .form-inputs {
+  color: white;
+ }
+
+
+// ------SIGNUP FORM--------------------------
+
+ .form-signup {
+  position: absolute;
+  top: 80px;
+  left: 60px;
+  right: 60px;
+}
+
+.signup-inputs {
+  width: 70%;
+}
+
+ .actions-signup {
+  position: absolute;
+  top: 590px;
+  left: 170px;
+ }
+
+// -----------------------------------
+
+
+
+.btn-login {
+  color: $twt-blue;
+  border-color: $twt-blue;
+  border-radius: 25px;
+  padding: 7px 20px;
+  font-weight: bold;
+  // margin-top: 31px;
+  text-decoration: none !important;
+
+}
+
+.logo-landing {
+  // background-color: white;
+  background-image: url("barkrr-logo");
+  background-repeat: no-repeat;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 235px;
+  left: 135px;
+}
+
+.text-landing {
+  color: white;
+  position: absolute;
+  left: 135px;
+  top: 300px;
+  width: 400px;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.btn-forgotpass {
+  position: absolute;
+  top: 120px;
+  left: 315px;
+  font-size: 12px;
+}
+
+.btn-big-signup a {
+  position: absolute;
+  color: white !important;
+  border-color: $twt-blue;
+  background-color: $twt-blue;
+  border-radius: 25px;
+  padding: 7px 175px;
+  font-weight: bold;
+  top: 425px;
+  left: 135px;
+  text-decoration: none !important;
+  a {
+    text-decoration: none;
+  }
+}
+
+.btn-big-log {
+  position: absolute;
+  color: $twt-blue;
+  border-color: $twt-blue;
+  background-color: $twt-lblack;
+  border-radius: 25px;
+  padding: 7px 180px;
+  font-weight: bold;
+  top: 475px;
+  left: 135px;
+  text-decoration: none !important;
+   a {
+    text-decoration: none;
+  }
+
+}
+
+
