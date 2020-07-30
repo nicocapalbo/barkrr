@@ -1,20 +1,18 @@
-<div class="tweets-feed">
-  <div class="tw-inpt">
-    <div class="tw-cnt-avatar">
-      <i class="fas fa-user-circle"></i>
+<div class="tw-inpt">
+  <div class="tw-cnt-avatar">
+    <i class="fas fa-user-circle"></i>
+  </div>
+  <div class="tw-inpt-body">
+    <div class="tw-inpt-body-title">
+      <tw-title>What's happening?</tw-title>
     </div>
-    <div class="tw-inpt-body">
-      <div class="tw-inpt-body-title">
-        <tw-title>What's happening?</tw-title>
-      </div>
-      <div class="tw-inpt-body-form">
-        <%= simple_form_for [@user, @tweet] do |f| %>
-          <%= f.input :text , label: false, placeholder: 'Write your tweet...', as: :text, input_html: {rows: 2}, wrapper: false %>
-          <div class="d-flex forms-buttons">
-            <%= f.button :submit, 'Tweet', class: "twtbtn" %>
-          </div>
-        <% end  %>
-      </div>
+    <div class="tw-inpt-body-form">
+      <%= simple_form_for [@user, @tweet] do |f| %>
+        <%= f.input :text , label: false, placeholder: 'Write your tweet...', as: :text, input_html: {rows: 2}, wrapper: false %>
+        <div class="d-flex forms-buttons">
+          <%= f.button :submit, 'Tweet', class: "twtbtn" %>
+        </div>
+      <% end  %>
     </div>
   </div>
 </div>

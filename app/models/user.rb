@@ -31,4 +31,8 @@ class User < ApplicationRecord
   def following?(user)
     followees.include?(user)
   end
+
+  def liked?(tweet)
+    favorites.exists?(tweet_id: tweet)
+  end
 end

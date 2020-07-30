@@ -1,13 +1,7 @@
 class TweetsController < ApplicationController
-
-  # def index
-  #   @user = User.find(params[:user_id])
-  #   @tweets = User.find(params[:user_id]).tweets.order("created_at DESC")
-  # end
-
   def create
-    if Following.find_by(followed_id: 1, follower_id: 1).nil?
-      Following.create(followeed_id: current_user.id, follower_id: current_user.id)
+    if Following.find_by(followed_id: current_user.id, follower_id: current_user.id).nil?
+      Following.create(followed_id: current_user.id, follower_id: current_user.id)
     end
     @user = User.find(current_user.id)
     @tweet = Tweet.new(tweet_params)
@@ -17,6 +11,22 @@ class TweetsController < ApplicationController
     else
       redirect_to root_path
     end
+  end
+
+  def like
+    # Tweet.first.favorites.create(user_id: 30)
+    @tweet = Tweet.find(params[:id])
+    if !current_user.liked?(params[:id])
+      @like = @tweet.favorites.create(user_id: current_user.id)
+    else
+      @unlike = @tweet.favorites.find_by(user_id: current_user.id).destroy
+    end
+
+    respond_to do |format|
+      format.html {}
+      format.json { render json: { count: @tweet.total_favs, like: current_user.liked?(params[:id]) } }
+    end
+
   end
 
   private
