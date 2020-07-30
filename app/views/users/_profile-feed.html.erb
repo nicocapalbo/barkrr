@@ -18,11 +18,26 @@
       </div>
     </div>
     <div class="bottom-toolbar">
-      <div class="bottom-toolbar-items">
-        <h4><i class="far fa-heart"></i>5</h4>
-        <h4><i class="far fa-heart"></i>5</h4>
-        <h4><i class="far fa-heart"></i>5</h4>
-        <h4><i class="far fa-heart"></i>5</h4>
+      <div class="bottom-toolbar-items" data-controller="fav">
+
+        <div class="bottom-toolbar-item" data-action="mouseover->fav#overRP mouseout->fav#outRP">
+          <i class="far fa-comment" id="tweet-rp-<%= tweet.id %>" data-tweet-id="<%= tweet.id %>"></i>
+        </div>
+
+        <div class="bottom-toolbar-item" data-action="mouseover->fav#overRT mouseout->fav#outRT">
+          <i class="fas fa-retweet" id="tweet-rt-<%= tweet.id %>" data-tweet-id="<%= tweet.id %>"></i>
+        </div>
+
+        <div class="bottom-toolbar-item" data-action="click->fav#like mouseover->fav#over mouseout->fav#out">
+          <i class="  <%= current_user.liked?(tweet.id) ? 'fas' : 'far' %> fa-heart <%= 'heart-inactive' unless current_user.liked?(tweet.id) %>" data-tweet-id="<%= tweet.id %>" id="tweet-<%= tweet.id %>"></i>
+          <div id="fav-count-<%= tweet.id %>" class="fav_counter <%= 'counter-inactive' unless current_user.liked?(tweet.id) %>">
+            <%= tweet.total_favs %>
+          </div>
+        </div>
+        <div class="bottom-toolbar-item" data-action="mouseover->fav#overSH mouseout->fav#outSH">
+          <i class="fas fa-external-link-alt" id="tweet-sh-<%= tweet.id %>" data-tweet-id="<%= tweet.id %>"></i>
+        </div>
+
       </div>
     </div>
   </div>

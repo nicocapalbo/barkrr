@@ -1,11 +1,13 @@
 .tweets-feed {
-  z-index: 1;
+  // z-index: 1;
+  border-top: 6px solid $twt-lgray;
 }
 
 .tweet-container {
-border-top: 1px solid grey;
-border-left: 1px solid grey;
-border-right: 1px solid grey;
+// border-top: 1px solid grey;
+border-left: 1px solid $twt-lgray;
+border-right: 1px solid $twt-lgray;
+border-bottom: 1px solid $twt-lgray;
 min-height: 107px;
 position: relative;
 }
@@ -38,4 +40,12 @@ position: relative;
   display: flex;
   justify-content: space-around;
   padding: 0px 20px 0px 20px;
+}
+
+
+.bottom-toolbar-item {
+  display: flex;
+  justify-content: space-around;
+  padding: 0px 20px 0px 20px;
+  margin-bottom: 2px;
 }

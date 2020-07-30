@@ -1,0 +1,87 @@
+// ------FAVORITE------------------------
+
+.fa-heart {
+  padding: 8px 8px;
+  color: $twt-red;
+  background-color: rgba(0,0,0,0);
+  border-radius: 50%;
+}
+
+.fa-heart-over {
+  padding: 8px 8px;
+  color: #D92027 !important;
+  background-color: rgba(255, 0, 0, 0.15);
+  border-radius: 50%;
+}
+
+.heart-inactive {
+  color: $twt-dgray;
+  padding: 8px 8px;
+  border-radius: 50px;
+}
+
+.fav_counter {
+  color: $twt-red;
+  padding-top: 4px;
+  padding-left: 2px;
+}
+
+.fav_counter-over {
+  color: $twt-red !important;
+  padding-top: 4px;
+  padding-left: 2px;
+}
+
+.counter-inactive {
+  color: $twt-dgray;
+  padding-top: 4px;
+  padding-left: 2px;
+}
+
+// ------REPLY-------------------------
+
+.fa-comment {
+  padding: 8px 8px;
+  color: $twt-dgray;
+  background-color: rgba(0,0,0,0);
+  border-radius: 50%;
+}
+
+.fa-comment-over {
+  padding: 8px 8px;
+  color: rgb(27, 149, 224) !important;
+  background-color: rgba(27, 149, 224, 0.15);
+  border-radius: 50%;
+}
+
+// ------RETWEET-------------------------
+
+.fa-retweet {
+  padding: 8px 8px;
+  color: $twt-dgray;
+  background-color: rgba(0,0,0,0);
+  border-radius: 50%;
+}
+
+.fa-retweet-over {
+  padding: 8px 8px;
+  color: #19cf86 !important;
+  background-color: #19CF8615;
+  border-radius: 50%;
+}
+
+// ------SHARE-------------------------
+
+.fa-external-link-alt {
+  padding: 8px 8px;
+  color: $twt-dgray;
+  background-color: rgba(0,0,0,0);
+  border-radius: 50%;
+}
+
+.fa-external-link-alt-over {
+  padding: 8px 8px;
+  color: rgb(27, 149, 224) !important;
+  background-color: rgba(27, 149, 224, 0.15);
+  border-radius: 50%;
+}
