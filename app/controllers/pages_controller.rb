@@ -8,7 +8,7 @@ class PagesController < ApplicationController
       @tweets = Tweet.all.order("created_at")
     else
       @tweets = []
-      current_user.followers.each do |follower|
+      current_user.followees.each do |follower|
         follower.tweets.each do |tweet|
           @tweets << tweet
         end
