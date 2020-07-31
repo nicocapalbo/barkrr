@@ -14,9 +14,9 @@ body {
 .side-bar {
   position: sticky;
   top: 68px;
-  border: 1px solid grey;
+  // border: 1px solid grey;
   // flex-grow: 1;
-  max-width: 25%;
+  min-width: 20%;
   height: calc(100vh - 68px);
 }
 
