@@ -1,0 +1,50 @@
+.sidebarcontainer {
+
+}
+
+.sbflexbox {
+  margin-top: 60px;
+  display: flex;
+  flex-flow: column;
+  height: 235px;
+  justify-content: space-evenly;
+}
+
+ .sbactions {
+  font-size: 18px;
+  font-weight: 500;
+  width: fit-content;
+  padding: 10px 20px;
+
+  i {
+    font-size: 22px;
+    padding-right: 10px;
+  }
+ }
+
+.sbactions:hover {
+  color: $twt-blue;
+  background-color: #1DA1F220;
+  border-radius: 25px;
+  transition: .3s;
+}
+
+.sbtwtbtn {
+  margin-top: 30px;
+  color: white;
+  background-color: $twt-blue;
+  border-radius: 25px;
+  padding: 10px 20px;
+  width: 220px;
+  font-weight: 500;
+
+  sometext {
+  padding-left: 70px;
+  }
+}
+
+.sbtwtbtn:hover {
+  background-color: #1b90d7;
+  transition: .3s;
+
+}
