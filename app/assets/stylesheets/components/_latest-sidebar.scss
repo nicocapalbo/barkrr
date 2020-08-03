@@ -1,0 +1,51 @@
+.sidebarcontainer {
+
+}
+
+.latest {
+
+}
+
+.whotofollow {
+  // border: 1px solid $twt-lgray;
+  border-radius: 15px;
+  background-color: $twt-elgray;
+  width: 340px;
+  margin-top: 60px;
+}
+
+.wtftitle {
+  padding: 9px 14px;
+}
+
+.wtfusers {
+  padding: 9px 14px;
+  // border-right: 1px solid;
+  border-top: 1px solid $twt-lgray;
+  // border-left: 1px solid;
+  width: 100%;
+  display: flex;
+  position: relative;
+}
+
+.wtf-userdata {
+  display: flex;
+  flex-direction: column;
+  width: 150px;
+}
+.wtf-userdata-usrname {
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+.wtf-userdata-usrhandle {
+    font-size: 14px;
+    font-weight: 400;
+    color: $twt-lgray
+  }
+ .wtf-fllwbtn {
+  position: absolute;
+  margin-top: 8px;
+  border-radius: 25px;
+  padding: 1px 14px;
+ }

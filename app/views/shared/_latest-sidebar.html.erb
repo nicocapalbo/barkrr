@@ -1,0 +1,38 @@
+<div class="sidebarcontainer">
+
+  <div class="whotofollow">
+    <div class="wtftitle">
+      <h5>Who to follow</h5>
+    </div>
+      <% User.all.sample(5).each do |usr|  %>
+        <div class="wtfusers">
+          <div class="wtf-avatar" style="
+    padding-right: 14px;">
+            <i class="fas fa-user-circle"></i>
+          </div>
+          <div class="wtf-userdata">
+            <div class="wtf-userdata-usrname"> <%= usr.username  %></div>
+            <div class="wtf-userdata-usrhandle">@<%= usr.handle  %></div>
+          </div>
+          <div class="wtf-follow">
+            <% @user = usr %>
+              <div class="usr-follow-btn" data-controller="followings">
+                <% if current_user.id != @user.id %>
+                  <% if !current_user.following?(@user) %>
+                    <%= link_to follow_user_path(@user) do %>
+                      <follow class="wtf-fllwbtn follow">Follow</follow>
+                    <% end  %>
+                  <% else  %>
+                    <%= link_to unfollow_user_path(@user) do %>
+                      <follow class="wtf-fllwbtn following" data-action="mouseover->followings#over mouseout->followings#out">Following</follow>
+                    <% end %>
+                  <% end %>
+                <% end %>
+              </div>
+          </div>
+        </div>
+      <% end  %>
+
+  </div>
+
+</div>
