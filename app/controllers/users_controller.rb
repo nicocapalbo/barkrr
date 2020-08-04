@@ -5,6 +5,13 @@ class UsersController < ApplicationController
     # raise
   end
 
+  def favs
+    @user = current_user
+    @favs = current_user.favorites.order("created_at DESC")
+    #@favs.tweet.text
+    # raise
+  end
+
   def follow
     @follow_user = User.find(params[:id])
     current_user.follow(@follow_user)
