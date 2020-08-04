@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     member do
       get :follow
       get :unfollow
+      get :favs
     end
     resources :tweets, only: [:index, :create]
   end
