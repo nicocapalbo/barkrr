@@ -20,6 +20,12 @@ class User < ApplicationRecord
   # 2) Based on the array of instances from the loged-in user, retrieve all the ID of the users following the loged-in user.
   has_many :followers, through: :follower_users, source: :follower
 
+  has_many :sender_relationships, foreign_key: :recipient_id, class_name: 'Conversation'
+  has_many :senders, through: :sender_relationships, source: :sender
+
+  has_many :recipient_relationships, foreign_key: :sender_id, class_name: 'Conversation'
+  has_many :recipients, through: :recipient_relationships, source: :recipient
+
   def follow(user)
     followed_users.create(followed_id: user.id)
   end
@@ -34,5 +40,9 @@ class User < ApplicationRecord
 
   def liked?(tweet)
     favorites.exists?(tweet_id: tweet)
+  end
+
+  def to_label
+    "#{handle}"
   end
 end
