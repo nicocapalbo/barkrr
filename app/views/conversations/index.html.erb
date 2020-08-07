@@ -3,19 +3,46 @@
     <%= render 'shared/user-sidebar' %>
   </div>
   <div class="conv-box">
-    <div class="conv-bar">
-      <!-- Bootstrap model for creating a conversation -->
-      <p class="text-blue" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-user-plus"></i></p>
-    </div>
-    <div class="conversations">
-      <% @conversations.each do |conversation| %>
-        <%= conversation.other_user(current_user).username %>
-        <%= conversation.messages.count %>
-      <% end %>
+
+    <div class="conv-lb">
+      <div class="conv-bar">
+        <h5>Messages</h5>
+        <!-- Bootstrap model for creating a conversation -->
+        <p class="text-blue" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-user-plus"></i></p>
+      </div>
+        <% @conversations.each do |conversation| %>
+          <div class="conversations">
+            <div class="wtf-avatar" style="padding-right: 14px;">
+              <i class="fas fa-user-circle"></i>
+            </div>
+            <div class="conv-user">
+              <div class="conv-user-data">
+               <h3 class="mr-1"><%= truncate(conversation.other_user(current_user).username, :length => 17)%></h3>
+               <h4>@<%= truncate(conversation.other_user(current_user).handle, :length => 8) %></h4>
+              </div>
+              <div class="conv-user-mess">
+               <!-- <p> <%= truncate(conversation.messages.last, :length => 15) %></p> -->
+               <mess><%= truncate("fjep foe ad fwp  aofnoi soqns qpqsd qs", :length => 35) %></mess>
+              </div>
+            </div>
+            <div class="conv-date">
+              <% if conversation.updated_at.year < Time.now.year  %>
+              <%= raise %>
+               <t> <%= conversation.updated_at.strftime('%b %d, %Y')%></t>
+              <% else %>
+               <t> <%= conversation.updated_at.strftime('%b %d')%></t>
+              <% end %>
+            </div>
+
+          </div>
+        <% end %>
     </div>
 
+    <div class="conv-rb">
+    </div>
 
   </div>
+
 
 </div>
 

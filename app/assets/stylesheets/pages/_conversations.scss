@@ -1,0 +1,66 @@
+.conv-box {
+  width: 80%;
+  // border: 1px solid;
+  display: flex;
+  border-left: 1px solid $twt-cgray;
+  border-right: 1px solid $twt-cgray;
+
+}
+
+.conv-lb {
+  width: 35%;
+  border-right: 1px solid $twt-cgray;
+}
+
+.conv-bar {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 14px;
+  padding-top: 10px;
+  border-bottom: 1px solid $twt-cgray;
+}
+
+.conversations{
+  border-bottom: 1px solid $twt-cgray;
+  height: 75px;
+  padding: 14px;
+  display: flex;
+}
+
+.conv-user {
+  width: -webkit-fill-available;
+}
+
+.conv-user-data {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.conv-user-mess {
+  mess {
+    font-size: 14px;
+    font-weight: 200;
+  }
+}
+
+.conv-date {
+  white-space: nowrap;
+}
+
+// .conv-date {
+//   text-align: justify;
+// }
+
+// .conv-date:after {
+//   content: "";
+//   display: inline-block;
+//   width: 100%;
+// }
+
+.conv-rb{
+    width: 65%;
+}
+
+.fa-user-plus {
+  color: $twt-blue;
+}
