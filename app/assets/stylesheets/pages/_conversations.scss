@@ -18,6 +18,26 @@
   padding: 0px 14px;
   padding-top: 10px;
   border-bottom: 1px solid $twt-cgray;
+
+}
+
+.text-blue {
+  padding: 5px;
+  height: 34px;
+  margin-bottom: 5px;
+}
+
+.text-blue:hover {
+  background-color: #1DA1F220;
+  border-radius: 50%;
+  padding: 5px;
+}
+
+.fa-user-plus {
+  color: $twt-blue;
+  height: 24px;
+  width: 24px;
+  text-align: center;
 }
 
 .conversations{
@@ -25,6 +45,13 @@
   height: 75px;
   padding: 14px;
   display: flex;
+  // padding: 14px 13px 14px 14px;
+  // border-right: 2px solid $twt-blue;
+}
+
+.conversations:hover {
+  background-color: $twt-elgray;
+  transition: .3s;
 }
 
 .conv-user {
@@ -61,6 +88,3 @@
     width: 65%;
 }
 
-.fa-user-plus {
-  color: $twt-blue;
-}
