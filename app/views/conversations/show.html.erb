@@ -38,6 +38,17 @@
     </div>
 
     <div class="conv-rb">
+      <div id="messages" data-conversation-id="<%= @conversation.id %>">
+        <% @messages.each do |message| %>
+          <%= render "conversations/conv-messages", message: message %>
+        <% end %>
+      </div>
+      <%= simple_form_for [ @conversation, @message ], remote: true do |f| %>
+        <%= f.input :content, label: false, placeholder: "Write your message", autocomplete: false, wrapper_html: {class: "text-chat"}, input_html: {class: "input-chat"} %>
+        <div class="form-group button-chat">
+          <%= f.button :submit, "Send", class: "btn btn-primary"%>
+        </div>
+      <% end %>
     </div>
 
   </div>

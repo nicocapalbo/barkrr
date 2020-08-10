@@ -9,16 +9,24 @@ class MessagesController < ApplicationController
   # end
 
   def create
-    @message.conversation = @conversation
-    @message = Message.new(message_params)
-    @messages.user = current_user
+    # @message.conversation = @conversation
+    # @message = Message.new(message_params)
+    @message = @conversation.messages.new(message_params)
+    @message.user = current_user
 
+    if @message.save
+      ConversationChannel.broadcast_to(
+        @conversation,
+        render_to_string(partial: "conversations/conv-messages", locals: { message: @message })
+      )
+      redirect_to conversation_path(@conversation, anchor: "message-#{@message.id}")
+    end
   end
 
   private
 
   def set_conversation
-    @conversation = Conversation.find(params[:id])
+    @conversation = Conversation.find(params[:conversation_id])
   end
 
   def message_params
