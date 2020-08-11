@@ -49,6 +49,20 @@
   // border-right: 2px solid $twt-blue;
 }
 
+a.conv_links {
+  color: black;
+  text-decoration: none;
+}
+
+a.conv_links:hover {
+  text-decoration: none;
+  color: black;
+}
+a.conv_links:focus {
+  text-decoration: none;
+  color: black;
+}
+
 .conversations:hover {
   background-color: $twt-elgray;
   transition: .3s;

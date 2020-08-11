@@ -11,6 +11,7 @@
         <dm class="text-blue" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-user-plus"></i></dm>
       </div>
         <% @conversations.each do |conversation| %>
+          <%= link_to conversation_path(conversation.id), :class => 'conv_links' do  %>
           <div class="conversations" id="conv-<%=conversation.id%>">
             <div class="wtf-avatar" style="padding-right: 14px;">
               <i class="fas fa-user-circle"></i>
@@ -34,6 +35,7 @@
             </div>
 
           </div>
+          <% end %>
         <% end %>
     </div>
 
