@@ -1,7 +1,9 @@
 <div class="main">
+
   <div class="side-bar">
     <%= render 'shared/user-sidebar' %>
   </div>
+
   <div class="conv-box">
 
     <div class="conv-lb">
@@ -10,47 +12,74 @@
         <!-- Bootstrap model for creating a conversation -->
         <dm class="text-blue" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-user-plus"></i></dm>
       </div>
-        <% @conversations.each do |conversation| %>
-          <%= link_to conversation_path(conversation.id), :class => 'conv_links' do  %>
-            <div class="conversations" id="conv-<%=conversation.id%>">
-              <div class="wtf-avatar" style="padding-right: 14px;">
-                <i class="fas fa-user-circle"></i>
-              </div>
-              <div class="conv-user">
-                <div class="conv-user-data">
-                 <h3 class="mr-1"><%= truncate(conversation.other_user(current_user).username, :length => 17)%></h3>
-                 <h4>@<%= truncate(conversation.other_user(current_user).handle, :length => 8) %></h4>
+      <div id="conv-cont" class="parent-scroll">
+        <div class="child-scroll child-convH">
+          <% @conversations.each do |conversation| %>
+            <%= link_to conversation_path(conversation.id), :class => 'conv_links' do  %>
+              <div class="conversations" id="conv-<%=conversation.id%>">
+                <div class="wtf-avatar" style="padding-right: 14px;">
+                  <i class="fas fa-user-circle"></i>
                 </div>
-                <div class="conv-user-mess">
-                 <mess><%= truncate("fjep foe ad fwp  aofnoi soqns qpqsd qs", :length => 35) %></mess>
+                <div class="conv-user">
+                  <div class="conv-user-data">
+                   <h3 class="mr-1"><%= truncate(conversation.other_user(current_user).username, :length => 17)%></h3>
+                   <h4>@<%= truncate(conversation.other_user(current_user).handle, :length => 8) %></h4>
+                  </div>
+                  <div class="conv-user-mess">
+                   <% if conversation.messages.empty? %>
+                      <mess><%= truncate("", :length => 35) %></mess>
+                    <% else  %>
+                      <mess><%= truncate(conversation.messages.last.content, :length => 35) %></mess>
+                    <% end %>
+                  </div>
+                </div>
+                <div class="conv-date">
+                  <% if conversation.updated_at.year < Time.now.year  %>
+                  <%= raise %>
+                   <t> <%= conversation.updated_at.strftime('%b %d, %Y')%></t>
+                  <% else %>
+                   <t> <%= conversation.updated_at.strftime('%b %d')%></t>
+                  <% end %>
                 </div>
               </div>
-              <div class="conv-date">
-                <% if conversation.updated_at.year < Time.now.year  %>
-                <%= raise %>
-                 <t> <%= conversation.updated_at.strftime('%b %d, %Y')%></t>
-                <% else %>
-                 <t> <%= conversation.updated_at.strftime('%b %d')%></t>
-                <% end %>
-              </div>
-            </div>
+            <% end %>
           <% end %>
-        <% end %>
+        </div>
+      </div>
     </div>
 
     <div class="conv-rb">
-      <div id="messages" data-conversation-id="<%= @conversation.id %>">
-        <% @messages.each do |message| %>
-          <%= render "conversations/conv-messages", message: message %>
-        <% end %>
-      </div>
-      <%= simple_form_for [ @conversation, @message ], remote: true do |f| %>
-        <%= f.input :content, label: false, placeholder: "Write your message", autocomplete: false, wrapper_html: {class: "text-chat"}, input_html: {class: "input-chat"} %>
-        <div class="form-group button-chat">
-          <%= f.button :submit, "Send", class: "btn btn-primary"%>
+
+
+        <div class="conv-head">
+          <h3><%= @conversation.other_user(current_user).username%></h3>
+          <h4>@<%= @conversation.other_user(current_user).handle%></h4>
         </div>
-      <% end %>
+
+        <div class="parent-scroll">
+          <div class="conv-msgs child-scroll child-msgsH">
+            <div id="messages" data-conversation-id="<%= @conversation.id %>">
+              <% @messages.each do |message| %>
+                <%= render "conversations/conv-messages", message: message %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+
+     <!--    <div class="conv-submit">
+          <%= simple_form_for [ @conversation, @message ], html: {class: "chat-form"}, remote: true do |f| %>
+            <%= f.input :content, label: false, placeholder: "Write your message", autocomplete: false, wrapper_html: {class: "text-chat"}, input_html: {class: "input-chat"} %>
+            <div class="form-group button-chat">
+              <%= f.button :submit, "Send", class: "btn btn-primary button-chat"%>
+            </div>
+          <% end %>
+        </div> -->
+
     </div>
+
+
+
+
 
   </div>
 

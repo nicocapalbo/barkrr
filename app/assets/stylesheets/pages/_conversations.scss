@@ -1,15 +1,42 @@
 .conv-box {
-  width: 80%;
-  // border: 1px solid;
+  width: 990px;
   display: flex;
   border-left: 1px solid $twt-cgray;
   border-right: 1px solid $twt-cgray;
-
 }
 
+// --------------------------PANE SCROLL CONFIG----------------------------
+
+.parent-scroll {
+  display: flex;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    backface-visibility: hidden;
+    will-change: overflow;
+}
+
+.child-scroll {
+  overflow: auto;
+    width: -webkit-fill-available;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: none;
+}
+  .child-convH {
+    height: auto;
+  }
+
+  .child-msgsH {
+    height: 80vh;
+  }
+
+// --------------------------LEFT PANE----------------------------
+
 .conv-lb {
-  width: 35%;
+  width: 390px;
   border-right: 1px solid $twt-cgray;
+  height: calc(100vh - 68px);
+  position: relative;
 }
 
 .conv-bar {
@@ -19,6 +46,10 @@
   padding-top: 10px;
   border-bottom: 1px solid $twt-cgray;
   height: 50px;
+  position: sticky;
+  top: 68px;
+  z-index: 5;
+  background-color: white;
 }
 
 .text-blue {
@@ -40,13 +71,17 @@
   text-align: center;
 }
 
+#conv-cont {
+  height: calc(100vh - 121px);
+  width: 388px;
+}
+
+
 .conversations{
   border-bottom: 1px solid $twt-cgray;
   height: 75px;
   padding: 14px;
   display: flex;
-  // padding: 14px 13px 14px 14px;
-  // border-right: 2px solid $twt-blue;
 }
 
 a.conv_links {
@@ -80,7 +115,8 @@ a.conv_links:focus {
 .conv-user-mess {
   mess {
     font-size: 14px;
-    font-weight: 200;
+    font-weight: 400;
+    color: $twt-dgray;
   }
 }
 
@@ -88,17 +124,74 @@ a.conv_links:focus {
   white-space: nowrap;
 }
 
-// .conv-date {
-//   text-align: justify;
-// }
+// --------------------------RIGHT PANE INDEX----------------------------
 
-// .conv-date:after {
-//   content: "";
-//   display: inline-block;
-//   width: 100%;
-// }
-
-.conv-rb{
+.conv-rb {
     width: 65%;
+    max-width: 600px;
+    position: relative;
 }
+
+.conv-rb-empty {
+    text-align: center;
+    padding-top: 30%;
+  h3 {
+    font-size: 18px;
+    font-weight: 600;
+  }
+  mess {
+    font-size: 14px;
+    font-weight: 400;
+  }
+}
+
+// --------------------------RIGHT PANE SHOW----------------------------
+
+
+.conv-head {
+  padding: 0px 14px;
+  padding-top: 5px;
+  border-bottom: 1px solid $twt-cgray;
+  height: 50px;
+  width: 600px;
+  position: sticky;
+  top: 68px;
+  z-index: 5;
+  background-color: white;
+  h3 {
+    color: black;
+    font-size: 18px;
+    margin-bottom: 4px;
+  }
+  h4 {
+    color: grey;
+    font-size: 12px;
+    font-weight: 400;
+  }
+}
+
+.conv-msgs {
+  z-index: 1;
+  padding: 18px 14px 0px 14px;
+  top: 50px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
