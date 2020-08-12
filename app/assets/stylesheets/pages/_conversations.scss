@@ -27,7 +27,7 @@
   }
 
   .child-msgsH {
-    height: 80vh;
+    height: calc(100vh - 169px);
   }
 
 // --------------------------LEFT PANE----------------------------
@@ -152,6 +152,7 @@ a.conv_links:focus {
   padding: 0px 14px;
   padding-top: 5px;
   border-bottom: 1px solid $twt-cgray;
+  border-right: 1px solid $twt-cgray;
   height: 50px;
   width: 600px;
   position: sticky;
@@ -177,13 +178,37 @@ a.conv_links:focus {
 }
 
 
+.conv-submit {
+  // display: flex;
+  z-index: 5;
+  background-color: red;
 
 
+    // .form-button {
+    //     width: 20%;
+    // }
 
+    // .input-chat {
+    //     border-radius: 8px 0px 0px 8px
+    // }
+}
 
+    .input-chat {
+        width: 500px;
+    }
+.form-pos {
+  position: absolute;
+  bottom: 0px;
+  z-index: 5;
+  // background-color: red;
+  padding-top: 8px;
+  padding-bottom: 0px;
+  width: -webkit-fill-available;
+}
 
-
-
+.form-inline {
+  justify-content: space-evenly;
+}
 
 
 

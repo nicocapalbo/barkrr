@@ -66,14 +66,31 @@
           </div>
         </div>
 
-     <!--    <div class="conv-submit">
-          <%= simple_form_for [ @conversation, @message ], html: {class: "chat-form"}, remote: true do |f| %>
-            <%= f.input :content, label: false, placeholder: "Write your message", autocomplete: false, wrapper_html: {class: "text-chat"}, input_html: {class: "input-chat"} %>
-            <div class="form-group button-chat">
-              <%= f.button :submit, "Send", class: "btn btn-primary button-chat"%>
+<!--       <div class="conv-submit">
+       <%= simple_form_for [ @conversation, @message ], input_html: {class: "chat-form"}, remote: true do |f| %>
+            <div class="d-flex form_input">
+            <%= f.input_field :content, label: false, placeholder: "Write your message", autocomplete: false, input_html: {class: "input-chat"}%>
+              <%= f.button :submit, "Send", class: "btn btn-primary"%>
             </div>
+          <% end %> -->
+<div class="form-pos">
+          <%= simple_form_for [ @conversation, @message ],
+            wrapper: :inline_form,
+            html: { class: "form-inline", style: "justify-content: space-evenly;" },
+            wrapper_mappings: {
+              boolean: :inline_boolean
+            } do |f| %>
+
+            <%= f.input :content, input_html: { class: "", style: "width: 400px; margin-top: 0px; margin-bottom: 8px; height: 38px;", row: 1 } %>
+
+            <%= f.button :submit, class: "btn-primary mb-2"%>
           <% end %>
-        </div> -->
+          </div>
+
+
+
+
+        </div>
 
     </div>
 
