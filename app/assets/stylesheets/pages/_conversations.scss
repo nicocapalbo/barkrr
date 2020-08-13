@@ -1,15 +1,42 @@
 .conv-box {
-  width: 80%;
-  // border: 1px solid;
+  width: 990px;
   display: flex;
   border-left: 1px solid $twt-cgray;
   border-right: 1px solid $twt-cgray;
-
 }
 
+// --------------------------PANE SCROLL CONFIG----------------------------
+
+.parent-scroll {
+  display: flex;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    backface-visibility: hidden;
+    will-change: overflow;
+}
+
+.child-scroll {
+  overflow: auto;
+    width: -webkit-fill-available;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: none;
+}
+  .child-convH {
+    height: auto;
+  }
+
+  .child-msgsH {
+    height: calc(100vh - 169px);
+  }
+
+// --------------------------LEFT PANE----------------------------
+
 .conv-lb {
-  width: 35%;
+  width: 390px;
   border-right: 1px solid $twt-cgray;
+  height: calc(100vh - 68px);
+  position: relative;
 }
 
 .conv-bar {
@@ -18,7 +45,11 @@
   padding: 0px 14px;
   padding-top: 10px;
   border-bottom: 1px solid $twt-cgray;
-
+  height: 50px;
+  position: sticky;
+  top: 68px;
+  z-index: 5;
+  background-color: white;
 }
 
 .text-blue {
@@ -40,13 +71,34 @@
   text-align: center;
 }
 
+#conv-cont {
+  height: calc(100vh - 121px);
+  width: 388px;
+}
+
+
 .conversations{
   border-bottom: 1px solid $twt-cgray;
   height: 75px;
   padding: 14px;
   display: flex;
-  // padding: 14px 13px 14px 14px;
-  // border-right: 2px solid $twt-blue;
+  &.conv-current {
+    border-right: 2px solid $twt-blue !important;
+  }
+}
+
+a.conv_links {
+  color: black;
+  text-decoration: none;
+}
+
+a.conv_links:hover {
+  text-decoration: none;
+  color: black;
+}
+a.conv_links:focus {
+  text-decoration: none;
+  color: black;
 }
 
 .conversations:hover {
@@ -66,7 +118,8 @@
 .conv-user-mess {
   mess {
     font-size: 14px;
-    font-weight: 200;
+    font-weight: 400;
+    color: $twt-dgray;
   }
 }
 
@@ -74,17 +127,163 @@
   white-space: nowrap;
 }
 
-// .conv-date {
-//   text-align: justify;
-// }
+// --------------------------RIGHT PANE INDEX----------------------------
 
-// .conv-date:after {
-//   content: "";
-//   display: inline-block;
-//   width: 100%;
-// }
-
-.conv-rb{
+.conv-rb {
     width: 65%;
+    max-width: 600px;
+    position: relative;
 }
+
+.conv-rb-empty {
+    text-align: center;
+    padding-top: 30%;
+  h3 {
+    font-size: 18px;
+    font-weight: 600;
+  }
+  mess {
+    font-size: 14px;
+    font-weight: 400;
+  }
+}
+
+// --------------------------RIGHT PANE SHOW----------------------------
+
+
+.conv-head {
+  padding: 0px 14px;
+  padding-top: 5px;
+  border-bottom: 1px solid $twt-cgray;
+  border-right: 1px solid $twt-cgray;
+  height: 50px;
+  width: 600px;
+  position: sticky;
+  top: 68px;
+  z-index: 5;
+  background-color: white;
+  h3 {
+    color: black;
+    font-size: 18px;
+    margin-bottom: 4px;
+  }
+  h4 {
+    color: grey;
+    font-size: 12px;
+    font-weight: 400;
+  }
+}
+
+.conv-msgs {
+  z-index: 1;
+  padding: 18px 14px 0px 14px;
+  top: 50px;
+}
+
+
+.conv-submit {
+  // display: flex;
+  z-index: 5;
+  background-color: red;
+
+
+    // .form-button {
+    //     width: 20%;
+    // }
+
+    // .input-chat {
+    //     border-radius: 8px 0px 0px 8px
+    // }
+}
+
+    .input-chat {
+        width: 500px;
+    }
+.form-pos {
+  position: absolute;
+  bottom: 0px;
+  z-index: 5;
+  // background-color: red;
+  padding-top: 8px;
+  padding-bottom: 0px;
+  width: -webkit-fill-available;
+}
+
+.form-inline {
+  justify-content: space-evenly;
+}
+
+
+// -------------------------------------------\\
+
+
+.author {
+  display: flex;
+  justify-content: flex-start;
+  &.current {
+    justify-content: flex-end !important;
+  }
+}
+
+.author-cont {
+}
+
+.message-style {
+    background-color: $twt-cgray;
+    margin-top: 10px;
+    padding: 5px 10px;
+    border-radius: 15px 15px 15px 0px;
+    // box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.041);
+    // width: fit-content;
+    max-width: 80%;
+    min-width: 30%;
+    // margin-left: 20px;
+    &.current {
+      color: white;
+      background-color: $twt-blue;
+      border-radius: 15px 15px 0px 15px;
+        // border-color: #f592855e;
+        // align-self: flex-end;
+        // margin-right: 20px;
+        // margin-left: 0px;
+      }
+    p {
+        margin-bottom: 0;
+        font-size: 14px;
+    }
+}
+
+small{
+  font-size: 12px;
+  color: $twt-lgray;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

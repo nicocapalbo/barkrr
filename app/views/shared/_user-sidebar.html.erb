@@ -3,16 +3,22 @@
   <div class="sbflexbox">
 
     <div class="sbactions">
-      <i class="fas fa-home"></i>
-      <sbacttext> <%= link_to 'Home', root_path, :class => 'home_links' %> </sbacttext>
+      <%= link_to root_path, :class => 'home_links' do %>
+        <i class="fas fa-home"></i>
+        <sbacttext> Home  </sbacttext>
+      <% end %>
     </div>
     <div class="sbactions">
-      <i class="fas fa-envelope"></i>
-      <sbacttext>Messeges</sbacttext>
+      <%= link_to conversations_path, :class => 'home_links' do %>
+        <i class="fas fa-envelope"></i>
+        <sbacttext>Messages</sbacttext>
+      <% end %>
     </div>
     <div class="sbactions">
-      <i class="fas fa-bookmark" style="padding-left: 3px;"></i>
-      <sbacttext><%= link_to "Bookmarks", favs_user_path(@user), :class => 'home_links'%></sbacttext>
+      <%= link_to favs_user_path(@user), :class => 'home_links' do %>
+        <i class="fas fa-bookmark" style="padding-left: 3px;"></i>
+        <sbacttext>Bookmarks</sbacttext>
+      <% end %>
     </div>
     <div class="sbactions">
       <i class="fas fa-user" style="padding-left: 3px;"></i>
