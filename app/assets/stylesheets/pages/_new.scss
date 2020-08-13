@@ -48,7 +48,7 @@
 .form {
   position: absolute;
   top: 80px;
-  left: 60px;
+  left: 15%;
   right: 60px;
 }
 
@@ -59,6 +59,7 @@
 
  .form-inputs {
   color: white;
+  width: 40%;
  }
 
 
@@ -67,7 +68,7 @@
  .form-signup {
   position: absolute;
   top: 80px;
-  left: 60px;
+  left: 3%;
   right: 60px;
 }
 
@@ -78,7 +79,7 @@
  .actions-signup {
   position: absolute;
   top: 590px;
-  left: 170px;
+  left: 17%;
  }
 
 // -----------------------------------
@@ -93,6 +94,11 @@
   font-weight: bold;
   // margin-top: 31px;
   text-decoration: none !important;
+  &:hover {
+    color: $twt-blue;
+    border-color: $twt-blue;
+    background-color: #1da1f210;
+  }
 
 }
 
@@ -120,11 +126,11 @@
 .btn-forgotpass {
   position: absolute;
   top: 120px;
-  left: 315px;
+  left: 16%;
   font-size: 12px;
 }
 
-.btn-big-signup a {
+.btn-big-signup  {
   position: absolute;
   color: white !important;
   border-color: $twt-blue;
@@ -137,6 +143,10 @@
   text-decoration: none !important;
   a {
     text-decoration: none;
+  }
+  &:hover {
+    background-color: #1179b9;
+    border-color: #1179b9;
   }
 }
 
@@ -153,6 +163,11 @@
   text-decoration: none !important;
    a {
     text-decoration: none;
+  }
+  &:hover {
+    color: $twt-blue;
+    background-color: #2a4b6d;
+    border-color: #2a4b6d;
   }
 
 }

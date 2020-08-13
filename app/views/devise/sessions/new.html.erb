@@ -57,15 +57,16 @@
       <text-lan>See what’s happening in the world right now</text-lan>
     </div>
 
-    <div class="btn btn-big-signup">
       <% if devise_mapping.registerable? && controller_name != 'registrations' %>
-        <%= link_to "Sign up", new_registration_path(resource_name) %>
+        <%= link_to new_registration_path(resource_name), :class => "btn btn-big-signup" do %>
+          <sgn>Sign Up</sgn>
+          <% end %>
       <% end %>
-    </div>
 
-    <div class="btn btn-big-log">
-        <%= link_to "Log in", new_session_path(resource_name) %>
-    </div>
+      <%= link_to new_session_path(resource_name), :class => "btn btn-big-log" do %>
+        <sgn>Log in</sgn>
+      <% end %>
+
 
 
    </div>
