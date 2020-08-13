@@ -1,13 +1,13 @@
 .tweets-feed {
   // z-index: 1;
-  border-top: 6px solid $twt-lgray;
+  border-top: 8px solid $twt-gray;
 }
 
 .tweet-container {
 // border-top: 1px solid grey;
-border-left: 1px solid $twt-lgray;
-border-right: 1px solid $twt-lgray;
-border-bottom: 1px solid $twt-lgray;
+border-left: 1px solid $twt-gray;
+border-right: 1px solid $twt-gray;
+border-bottom: 1px solid $twt-gray;
 min-height: 107px;
 position: relative;
 }

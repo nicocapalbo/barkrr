@@ -1,7 +1,7 @@
 .btfbody {
-  border-right: 1px solid $twt-lgray;
-  border-bottom: 1px solid $twt-lgray;
-  border-left: 1px solid $twt-lgray;
+  border-right: 1px solid $twt-gray;
+  border-bottom: 1px solid $twt-gray;
+  border-left: 1px solid $twt-gray;
   display: flex;
   padding-left: 14px;
   padding-right: 14px;
@@ -29,9 +29,9 @@
 
 .pdbody {
   height: 369px;
-  border-right: 1px solid $twt-lgray;
-  border-bottom: 1px solid $twt-lgray;
-  border-left: 1px solid $twt-lgray;
+  border-right: 1px solid $twt-gray;
+  border-bottom: 1px solid $twt-gray;
+  border-left: 1px solid $twt-gray;
   position: relative;
 
   .usrcvr {
@@ -65,7 +65,7 @@
 .follow {
   color: $twt-blue;
   border: 1px solid $twt-blue;
-  background-color: white;
+  // background-color: white;
 }
 
 .following {

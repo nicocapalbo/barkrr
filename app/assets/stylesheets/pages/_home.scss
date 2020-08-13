@@ -7,24 +7,22 @@ body {
 
 .main {
   display: flex;
-  margin: 0px 5% 0px 5%;
-  // height: calc(100vh - 68px);
   position: relative;
+  justify-content: center;
 }
 
 .side-bar {
   position: sticky;
   top: 68px;
-  // border: 1px solid grey;
-  // flex-grow: 1;
-  min-width: 20%;
+  width: 275px;
   height: calc(100vh - 68px);
 }
 
 .main-center {
   width: 600px;
   margin: 0px 3% 0px 3%;
-  // border: 1px solid grey;
   flex-grow: 1;
   z-index: 1;
+  max-width: 600px;
+  min-width: 460px;
 }

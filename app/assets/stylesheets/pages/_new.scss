@@ -172,4 +172,21 @@
 
 }
 
+.btn-signup  {
+  color: white !important;
+  border-color: $twt-blue;
+  background-color: $twt-blue;
+  border-radius: 25px;
+  padding: 7px 20px;
+  font-weight: bold;
+  text-decoration: none !important;
+  a {
+    text-decoration: none;
+  }
+  &:hover {
+    color: white;
+    background-color: #1179b9;
+    border-color: #1179b9;
+  }
+}
 
