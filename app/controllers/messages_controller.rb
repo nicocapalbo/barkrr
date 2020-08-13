@@ -17,7 +17,9 @@ class MessagesController < ApplicationController
     if @message.save
       ConversationChannel.broadcast_to(
         @conversation,
-        render_to_string(partial: "conversations/conv-messages", locals: { message: @message })
+        user_is_author_partial: render_message(@message),
+        user_is_not_author: render_not_message(@message),
+        message_author: @message.user.id
       )
       redirect_to conversation_path(@conversation, anchor: "message-#{@message.id}")
     end
@@ -31,5 +33,13 @@ class MessagesController < ApplicationController
 
   def message_params
     params.require(:message).permit(:content)
+  end
+
+  def render_message(message)
+    render_to_string(partial: "conversations/conv-messages", locals: { message: @message, other_user: @conversation.other_user(current_user), user_is_author: true })
+  end
+
+  def render_not_message(message)
+    render_to_string(partial: "conversations/conv-messages", locals: { message: @message, other_user: @conversation.other_user(current_user), user_is_author: false })
   end
 end

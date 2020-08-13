@@ -16,7 +16,7 @@
         <div class="child-scroll child-convH">
           <% @conversations.each do |conversation| %>
             <%= link_to conversation_path(conversation.id), :class => 'conv_links' do  %>
-              <div class="conversations" id="conv-<%=conversation.id%>">
+              <div class="conversations <%='conv-current' if conversation.id == params[:id].to_i %>" id="conv-<%=conversation.id%>">
                 <div class="wtf-avatar" style="padding-right: 14px;">
                   <i class="fas fa-user-circle"></i>
                 </div>
@@ -58,9 +58,9 @@
 
         <div class="parent-scroll">
           <div class="conv-msgs child-scroll child-msgsH">
-            <div id="messages" data-conversation-id="<%= @conversation.id %>">
+            <div id="messages" data-conversation-id="<%= @conversation.id %>" data-current-user="<%= @current_user.id %>">
               <% @messages.each do |message| %>
-                <%= render "conversations/conv-messages", message: message %>
+                <%= render "conversations/conv-messages", message: message, user_is_author: message.user == current_user %>
               <% end %>
             </div>
           </div>
@@ -75,6 +75,7 @@
           <% end %> -->
 <div class="form-pos">
           <%= simple_form_for [ @conversation, @message ],
+            # remote: true,
             wrapper: :inline_form,
             html: { class: "form-inline", style: "justify-content: space-evenly;" },
             wrapper_mappings: {

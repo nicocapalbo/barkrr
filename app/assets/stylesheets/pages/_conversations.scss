@@ -82,6 +82,9 @@
   height: 75px;
   padding: 14px;
   display: flex;
+  &.conv-current {
+    border-right: 2px solid $twt-blue !important;
+  }
 }
 
 a.conv_links {
@@ -209,6 +212,70 @@ a.conv_links:focus {
 .form-inline {
   justify-content: space-evenly;
 }
+
+
+// -------------------------------------------\\
+
+
+.author {
+  display: flex;
+  justify-content: flex-start;
+  &.current {
+    justify-content: flex-end !important;
+  }
+}
+
+.author-cont {
+}
+
+.message-style {
+    background-color: $twt-cgray;
+    margin-top: 10px;
+    padding: 5px 10px;
+    border-radius: 15px 15px 15px 0px;
+    // box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.041);
+    // width: fit-content;
+    max-width: 80%;
+    min-width: 30%;
+    // margin-left: 20px;
+    &.current {
+      color: white;
+      background-color: $twt-blue;
+      border-radius: 15px 15px 0px 15px;
+        // border-color: #f592855e;
+        // align-self: flex-end;
+        // margin-right: 20px;
+        // margin-left: 0px;
+      }
+    p {
+        margin-bottom: 0;
+        font-size: 14px;
+    }
+}
+
+small{
+  font-size: 12px;
+  color: $twt-lgray;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -12,11 +12,12 @@ class ConversationsController < ApplicationController
   def show
     @conversation = Conversation.find(params[:id])
     @messages = @conversation.messages.order(created_at: :asc).last(20)
+    # raise
     @other_user = @conversation.other_user(current_user)
     @message = Message.new
 
     respond_to do |format|
-      format.js { render partial: 'conv-messages', layout: false }
+      format.js { render partial: 'conv-messages', anchor: "message-#{@messages.last.id}", layout: false }
       format.html
     end
   end
